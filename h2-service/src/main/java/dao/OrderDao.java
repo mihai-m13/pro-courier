@@ -1,11 +1,11 @@
 package dao;
 
 import com.procourier.model.Order;
+import com.procourier.model.Product;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.List;
-
 
 public class OrderDao {
     private EntityManager em;
@@ -27,5 +27,5 @@ public class OrderDao {
         TypedQuery<Order> query = em.createQuery(sql, Order.class);
         return query.getResultList();
     }
-
 }
+

@@ -1,13 +1,19 @@
-package main;
+package clientapp;
 
 import com.procourier.model.Order;
 import http.GetOrderByIdClient;
+import http.GetOrdersClient;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        GetOrderByIdClient client = new GetOrderByIdClient();
+        GetOrderByIdClient byIdClient = new GetOrderByIdClient();
+        GetOrdersClient allClient = new GetOrdersClient();
 
-        Order order = client.getOrder(1L);
-        System.out.println(order);
+        //Order order = byIdClient.getOrder(1L);
+        //System.out.println(order);
+        List<Order> orders = allClient.getOrders();
+        System.out.println(orders);
     }
 }
+
